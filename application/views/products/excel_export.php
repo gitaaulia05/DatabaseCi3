@@ -1,7 +1,7 @@
-  
-<?php  
 
+<?php  
 header ("Cache-Control: no-cache, must-revalidate");
+header('Content-type: image/jpeg');
     header ("Pragma: no-cache");
     header ("Content-type: application/x-msexcel");
     header ("Content-type: application/octet-stream");
@@ -9,12 +9,16 @@ header ("Cache-Control: no-cache, must-revalidate");
 ?>  
 
 <style type="text/css">
-  table,th,td{
+  table,th,td,img{
     border-collapse: collapse;
     padding: 15px;
     margin: 10px;
     color: #000;
+    width: 8px;
+  height: 8px;
   }
+
+
 </style>
 
 
@@ -42,7 +46,7 @@ header ("Cache-Control: no-cache, must-revalidate");
                 <td ><?php echo $row->semester; ?></td>
                 <td><?php echo $row->Tanggal_ambil;  ?></td>
                 <td><?php echo $row->kode_dosen; ?></td>
-                <td><?php echo $row->Sampul; ?></td>
+                <td class="gambar"><img src="<?= base_url('images/' . $row->Sampul) ?> " class="gambar1"></td>
               </tr>
 
             <?php

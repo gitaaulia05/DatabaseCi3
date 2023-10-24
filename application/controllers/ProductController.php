@@ -8,6 +8,7 @@ class ProductController extends CI_Controller {
           parent::__construct();
           $this->load->library('form_validation','session');
           $this->load->library('excel');
+          $this->load->library('session');
           $this->load->helper('form','url');
 
           if(empty($this->session->userdata('login'))) {
@@ -175,19 +176,6 @@ class ProductController extends CI_Controller {
     
     }
 
-    // public function tampilex()
-	// {
-    //     $this->load->view('templates/header');
-	// 	$this->load->view('products/import');
-    //     $this->load->view('templates/footer');
-	// }
-
-    public function fetch2() {
-
-   
-      
-
-    }
 
   public  function fetch()
 	{
@@ -275,8 +263,7 @@ class ProductController extends CI_Controller {
 {
   $data = $this-> ProductModel->dataMatakuliah();
   $this->load->view('products/excel_export' , ['data'=>$data]);
-
- 
 }
+
 
 }
